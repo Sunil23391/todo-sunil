@@ -1,0 +1,44 @@
+<header>
+</header>
+<div class="container-fluid whole-unit">
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-xs-4 col-sm-6 menu-panel">
+      <ul class="menu">
+        <li><a class="route" routerLink='/'>Home</a></li>
+        <li>
+          <div class="project-list-head">
+            <span>PROJECT LIST </span>
+            <button class="btn btn-info btn-xs control-btn" 
+            (click)="addProject()">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </div>
+          <ul class="menu">
+            <li class="project {{(selectedProjectIndex == i)?'selected':'' }}" *ngFor="let project of projectList;let i = index;" (click)="selectProject(project,i)">
+              <div class="inner">
+                <span *ngIf="!project.editingStatus"
+                (click)="stopSelection($event)" (dblclick)="editProject(project,i,projectInput,$event)">{{project.name}} </span>
+                <input #projectInput [hidden]="!project.editingStatus" (keyup.enter)="onEnter(project)" (click)="stopSelection($event)" [(ngModel)]='project.name'/>
+                
+                <button class="btn btn-info btn-xs control-btn" (click)="deleteProject(i,$event)">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+                <button class="btn btn-info btn-xs control-btn" (click)="editProject(project,i,projectInput,$event)">
+                  <span *ngIf="!project.editingStatus" class="glyphicon glyphicon-pencil"></span>
+                  <span *ngIf="project.editingStatus" class="glyphicon glyphicon-save"></span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li><a class="route" routerLink='/about'>About</a></li>
+      </ul>
+    </div>
+    <div *ngIf="selectedProjectIndex != -1" class="col-lg-10 col-md-9 col-xs-8 col-sm-6 content-panel">
+      <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="selectedProjectIndex == -1" class="col-lg-10 col-md-9 col-xs-8 col-sm-6 content-panel">
+      <blank-page></blank-page>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+
+.task-list{
+  background: #4a4a4a;
+  height: 100vh;
+  padding-top: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.task-information{
+  background: #9d9b9b;
+  height: 100vh;
+  padding-top: 14px;
+  color:black;
+}
+
+.header{
+  text-transform: uppercase;
+}
+.icons-bar{
+  margin-top:12px;
+}
+
+.control-btn{
+  border-radius: 10px;
+  outline: none!important;
+  font-size: 8px;
+  margin-top: 2px;
+  transition:0.7s all;
+}
+.control-btn:hover{
+  transform:scale(1.2);
+  width:auto;
+}
+
+.add,.delete{
+  width:20px;
+  overflow:hidden;
+  margin-left: 3%;
+  transition:0.5s all ease 0s;
+}
+.add:hover,.delete:hover{
+  width: 57.0469px;
+  transform:scale(1.2) translateX(3px);
+  transition:0.5s width ease 1s,0.5s transform ease 1s;
+}
+.add:after,.delete:after{
+  content: '';
+  opacity: 0;
+  transition:0.5s opacity ease 0s;
+}
+.add:hover:after{
+  content:'add new';
+  display: inline-block;
+  text-transform:uppercase;
+  opacity: 1;
+  transition:0.5s all ease 1s,0.5s opacity ease 1s;
+}
+
+.delete{
+  margin-left: 0.5%;
+  transition:margin-left 0.5s ease 1s;
+}
+.add:hover+.delete{
+  margin-left:3%;
+}
+.delete:hover:after{
+  content:'delete';
+  display: inline-block;
+  text-transform:uppercase;
+  opacity: 1;
+  transition:0.5s all ease 1s,0.5s opacity ease 1s;
+}
+
+.project-name{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.task-list-area{
+  margin-top:12px;
+}
+
+.task{
+  background: #595959;
+  border-top: 1px solid black;
+  margin: 0px -15px;
+  padding: 8px 15px;
+}
+.task-description{
+  font-size:12px;
+  font-weight: normal;
+}
+
+.selected-task{
+  background:#4472c4;
+}
+.checked-task{
+  background:#447244;
+}
+
+.task-name,.task-description{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

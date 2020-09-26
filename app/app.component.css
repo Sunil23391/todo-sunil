@@ -1,0 +1,76 @@
+.menu-panel{
+  background: #595959;
+  height: 100vh;
+  padding:0;
+  padding-top: 14px;
+}
+.menu{
+  list-style: none;
+  padding-left:0;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.menu li{
+  padding: 5px 0px;
+  margin-left: 0%;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+.menu li a{
+  text-decoration: none;
+  font-weight: bold;
+  color:white;
+}
+.menu .route{
+  padding:0px 30px;
+}
+
+.menu .project-list-head{
+  padding:0px 15px 0px 40px;
+}
+
+.menu .project .inner{
+  padding:0px 15px 0px 45px;
+}
+.menu .project {
+  margin-left: 0;
+  text-transform: none;
+}
+
+.menu .project.selected{
+  background:#4472c4;
+}
+.menu .project span{
+  cursor: pointer;
+}
+.menu .project:first-child{
+  margin-top:10px;
+}
+.project input{
+    color: white;
+    width: 119px;
+    font-size: 14px;
+    padding: 0px 4px;
+    background: #595959;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none!important;
+}
+
+.control-btn{
+  border-radius: 10px;
+  outline: none!important;
+  font-size: 8px;
+  margin-left: 3px;
+  margin-top: 2px;
+  transition:0.2s all;
+}
+.control-btn:hover{
+  transform:scale(1.2);
+}
+
+.menu .control-btn{
+  float:right;
+}
